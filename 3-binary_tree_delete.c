@@ -1,0 +1,20 @@
+#include "binary_trees.h"
+
+/**
+ * binary_tree_delete - Function that deletes an entire binary tree
+ * @tree: Pointer parameter to the root node of the tree to delete
+ *
+ */
+
+void binary_tree_delete(binary_tree_t *tree)
+{
+
+	if (tree != NULL)
+	{
+		/* Recurse left */
+		binary_tree_delete(tree->left);
+		/* Recurse right */
+		binary_tree_delete(tree->right);
+		free(tree);
+	}
+}
